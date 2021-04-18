@@ -29,7 +29,7 @@ for source in source_pops_var:
         mix_coeff = ad.linadmix(target, sources, fid=fid)
         mix_coeff_rand = ad.linadmixerr(target, sources, randQ, list_of_populations)
         std = mix_coeff_rand["std"]
-        (mix_coeff_pval, pval) = ad.linadmix(target, sources, q_val=qval)
+        (mix_coeff_pval, wval) = ad.linadmix(target, sources, q_val=qval)
         qvecs = ad.get_qvecs(sources)
         (target_indices, is_K) = ad.comp_target_sources(qvecs, sources, mix_coeff_pval, qval)
         randQ_sources = {}
@@ -53,7 +53,7 @@ for source in source_pops_var:
             idx = np.where(q_expected>=qval)
             wvalstat[rep] = np.sum((q_target[idx]-q_expected[idx])**2/q_expected[idx])
             
-        emp_pval = (len(np.where(wvalstat>=pval)[0])+1)/(num_reps_pval+1)
+        emp_pval = (len(np.where(wvalstat>=wval)[0])+1)/(num_reps_pval+1)
         print(f"Mixing coefficients: {mix_coeff}\nStandard errors: {std}\nP-value: {emp_pval}")    
         fid.write(f"Mixing coefficients: {mix_coeff}\nStandard errors: {std}\nP-value: {emp_pval}\n\n")
 fid.close()
