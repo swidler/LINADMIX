@@ -1,0 +1,27 @@
+Target:
+	Som50Eng50 (5 individuals)
+Sources: 
+(1) English (4 individuals)
+(2) Somali (4 individuals)
+Mixing coefficients: [0.48178181 0.51821819]
+Standard errors: [0.02994761 0.02994761]
+P-value: 0.0035996400359964
+
+Target:
+	Som50Eng50 (5 individuals)
+Sources: 
+(1) English (4 individuals)
+(2) Spanish (48 individuals)
+Mixing coefficients: [0. 1.]
+Standard errors: [0.07738949 0.07738949]
+P-value: 9.999000099990002e-05
+
+Target:
+	Som50Eng50 (5 individuals)
+Sources: 
+(1) English (4 individuals)
+(2) Iranian (3 individuals)
+Mixing coefficients: [0.69730318 0.30269682]
+Standard errors: [0.08524513 0.08524513]
+P-value: 9.999000099990002e-05
+
