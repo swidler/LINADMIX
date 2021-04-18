@@ -89,8 +89,8 @@ class Admix:
             # correct for last source population and normalize
             if any(is_K): # ??
                 meanQ[rep,self.K-1] = 1 - np.sum(meanQ[rep,idx_sourcepop])
-                meanQ[meanQ<0] = 0
-            meanQ[meanQ<0] = 0  # this line seems redundant
+                meanQ[meanQ<0] = 0  # this line is redundant
+            meanQ[meanQ<0] = 0
             meanQ[rep,:] = meanQ[rep,:] / np.sum(meanQ[rep,:])
         return meanQ
     
@@ -103,7 +103,7 @@ class Admix:
         indices = [np.where(ids==x)[0][0] for x in samples]
         
         # compute variance
-        [V, idx, is_K] = self.var(samples, P, G, indices, min_Qval=minval, target_indices=target_indices)
+        [V, idx, is_K] = self.var(samples, P, G, indices, min_Qval=minval)  # no target indices!
         
         meanQ = np.zeros((num_reps,self.K))
         for rep in range(num_reps):
@@ -115,7 +115,6 @@ class Admix:
             h0qmat = np.zeros((no_samples,self.K))
             for samp in range(no_samples):
                 h0qmat[samp] = h0qvec
-            
             # compute covariance
             idx_satall = list(set([x for y in idx for x in y]))
             no_joint_sourcepop = len(idx_satall)
@@ -145,7 +144,7 @@ class Admix:
             meanQ[rep,:] = meanQ[rep,:] / np.sum(meanQ[rep,:])
         return meanQ
 
-    def var(self, samps, P, G, indices, min_Qval=0.01, target_indices=[]):
+    def var(self, samps, P, G, indices, min_Qval=0.01):
         # hard-coded arguments
         no_snps = len(P)
         no_inds = len(samps)
@@ -161,8 +160,6 @@ class Admix:
             if idx_sourcepop[i][-1] == self.K-1:  # what is this?!
                 is_K[i] = 1
                 idx_sourcepop[i] = idx_sourcepop[i][:-1]  # delete last element
-            if target_indices != []:
-                idx_sourcepop[i] = np.union1d(idx_sourcepop[i], target_indices) ##TEST
             # num of relevant source populations
             L = len(idx_sourcepop[i]);
             # initialize information matrix
@@ -292,7 +289,7 @@ class Admix:
         #vals = list(mix.values())
         qest_target = np.dot(mix,qmat_sources)
         idx_est_target = np.where(qest_target>=qval)[0]
-        if idx_est_target[-1] == self.K + 1:
+        if idx_est_target[-1] == self.K - 1:
             is_K = 1
             idx_est_target = idx_est_target[:-1]  # delete last element
         return (idx_est_target, is_K)
