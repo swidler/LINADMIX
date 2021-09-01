@@ -87,6 +87,6 @@ The output is a text file that gives the target population and the source popula
 
 The script takes no command line inputs and can be run using the command **python run_linadmix.py**.
 
-The *example* directory contains 7 files. Five are examples of the input files LINADMIX expects. The config file shows how the variables are set. The .txt
-file is the output using the example inputs (results may vary slightly).
-Run the example using the run_linadmix_example.py script.
+The *example* directory contains 9 files. Five are examples of the input files LINADMIX expects. The 2 config files show how the variables are set. The .txt
+files are the outputs using the example inputs (results may vary slightly).
+Run the examples using the run_linadmix_example.py/run_linadmix_example2.py scripts.
