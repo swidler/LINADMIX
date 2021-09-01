@@ -38,7 +38,7 @@ The models run by LINADMIX are:
    SourceL: ConstantSourceL
    SourceL+1: VaryingSource1
    
-&nbsp;&nbsp;&nbsp;&nbsp;M. Target: TargetM
+&nbsp;&nbsp;&nbsp;&nbsp;N. Target: TargetN
      Source1: ConstantSource1
      Source2: ConstantSource2
      .
@@ -47,7 +47,7 @@ The models run by LINADMIX are:
      SourceL: ConstantSourceL
      SourceL+1: VaryingSource1
      
-&nbsp;&nbsp;&nbsp;&nbsp;M+1. Target: Target1
+&nbsp;&nbsp;&nbsp;&nbsp;N+1. Target: Target1
      Source1: ConstantSource1
      Source2: ConstantSource2
      .
@@ -56,7 +56,7 @@ The models run by LINADMIX are:
      SourceL: ConstantSourceL
      SourceL+1: VaryingSource2
      
-&nbsp;&nbsp;&nbsp;&nbsp;M+2. Target: Target2
+&nbsp;&nbsp;&nbsp;&nbsp;N+2. Target: Target2
      Source1: ConstantSource1
      Source2: ConstantSource2
      .
