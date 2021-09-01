@@ -1,0 +1,60 @@
+Target:
+	Som50Eng50 (5 individuals)
+Sources: 
+(1) English (4 individuals)
+(2) Jordanian (4 individuals)
+(3) Somali (4 individuals)
+Mixing coefficients: [ 4.81781814e-01 -2.39930428e-18  5.18218186e-01]
+Standard errors: [0.03208146 0.02370577 0.02613032]
+P-value: 0.003999600039996
+
+Target:
+	Som20Eng80 (5 individuals)
+Sources: 
+(1) English (4 individuals)
+(2) Jordanian (4 individuals)
+(3) Somali (4 individuals)
+Mixing coefficients: [ 7.88413005e-01 -1.03632365e-17  2.11586995e-01]
+Standard errors: [0.04632355 0.0306702  0.03041795]
+P-value: 0.00029997000299970003
+
+Target:
+	Som50Eng50 (5 individuals)
+Sources: 
+(1) English (4 individuals)
+(2) Jordanian (4 individuals)
+(3) Spanish (48 individuals)
+Mixing coefficients: [8.86746071e-17 3.13431275e-01 6.86568725e-01]
+Standard errors: [0.08267181 0.06523561 0.12339321]
+P-value: 9.999000099990002e-05
+
+Target:
+	Som20Eng80 (5 individuals)
+Sources: 
+(1) English (4 individuals)
+(2) Jordanian (4 individuals)
+(3) Spanish (48 individuals)
+Mixing coefficients: [0.02730485 0.01617798 0.95651718]
+Standard errors: [0.15327466 0.05386501 0.16980532]
+P-value: 9.999000099990002e-05
+
+Target:
+	Som50Eng50 (5 individuals)
+Sources: 
+(1) English (4 individuals)
+(2) Jordanian (4 individuals)
+(3) Iranian (3 individuals)
+Mixing coefficients: [0.56881775 0.43118225 0.        ]
+Standard errors: [0.05629001 0.05677103 0.0082883 ]
+P-value: 9.999000099990002e-05
+
+Target:
+	Som20Eng80 (5 individuals)
+Sources: 
+(1) English (4 individuals)
+(2) Jordanian (4 individuals)
+(3) Iranian (3 individuals)
+Mixing coefficients: [0.84692915 0.15307085 0.        ]
+Standard errors: [0.08078891 0.08088741 0.00749294]
+P-value: 9.999000099990002e-05
+
