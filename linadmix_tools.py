@@ -75,6 +75,28 @@ def read_gfile(g_file):
     g = np.where(g==1,0,g)  # replace 1 values with 0
     i = ids.to_numpy()
     return (i, g)
+
+def read_gfile2(g_file):
+    with open(g_file, "rt") as gfile:
+        header = gfile.readline()
+        header = header.rstrip("\n")  # remove trailing line feeds
+        header = header.lstrip()  # remove leading whitespace
+        fields = header.split()  # split by whitespace
+        id_ind = fields.index("IID")
+        gdata = []
+        ids = []
+        for line in gfile:
+            line = line.rstrip("\n")  # remove trailing line feeds
+            line = line.lstrip()  # remove leading whitespace
+            fields = line.split()  # split by whitespace
+            ids.append(fields[id_ind])
+            f = np.array(fields[6:])
+            f = np.where(f=='NA',np.nan,f).astype(np.float)
+            gdata.append(f)
+    i = np.array(ids)
+    g = np.asarray(gdata)
+    #g = np.where(g==1,0,g)  # replace 1 values with 0
+    return (i, g)
     
     
     
