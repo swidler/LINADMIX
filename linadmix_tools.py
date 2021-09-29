@@ -53,7 +53,8 @@ def cross_ind_file(ind, fam_file):
         print("ADMIXTURE uses samples that are not in the full list")
         
     #reorder ind file samples based on fam file order
-    ind["samp_ids"] = [samples[x] for x in idx if ~np.isnan(x) and x < len(samples)]  # exclude nans and out of range indices
+    #ind["samp_ids"] = [samples[x] for x in idx if ~np.isnan(x) and x < len(samples)]  # exclude nans and out of range indices
+    ind["samp_ids"] = samples[:]
     return ind
 
 def read_pfile(p_file):
