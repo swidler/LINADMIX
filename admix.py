@@ -48,7 +48,10 @@ class Admix:
         # draw error due to population covariance
         pop_err = np.zeros(self.K)
         zerovec = np.zeros(no_joint_sourcepop)
-        pop_err[idx_sourcepop] = np.random.multivariate_normal(zerovec,sig)
+        if no_joint_sourcepop == 1:
+            pop_err[idx_sourcepop] = np.random.normal(zerovec,sig)
+        else:
+            pop_err[idx_sourcepop] = np.random.multivariate_normal(zerovec,sig)
         return(sample_err, pop_err)
     
     def calc_randQ(self, pop, P, G, num_reps, ids, proxy_pop=None, minval=0.01):
