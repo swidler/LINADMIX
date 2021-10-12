@@ -16,7 +16,8 @@ ad.read_qfile(Qfile)
 
 # read in p and g files
 P = l.read_pfile(Pfile)
-(ids, G) = l.read_gfile(Gfile)
+#(ids, G) = l.read_gfile(Gfile)
+(ids, G) = l.read_gfile2(Gfile)
 
 list_of_populations = target_pops + source_pops_var + source_pops_const
 randQ = {}
