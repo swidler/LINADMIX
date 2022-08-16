@@ -17,7 +17,9 @@ The input file names and their directory should be specified in the config file.
 **Specifying the models in the config file:**
  
 target_pops = ["Target1","Target2",...,"TargetN"]
+
 source_pops_var  = ["VaryingSource1","VaryingSource2",...,"VaryingSourceM"]
+
 source_pops_const = ["ConstantSource1","ConstantSource2",...,"ConstantSourceL"]
 
 The models run by LINADMIX are:
