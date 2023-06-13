@@ -213,7 +213,7 @@ class Admix:
         b = np.zeros(len(q_sources[0]))
         Aeq = np.ones((1,len(q_sources[0])))
         beq = np.array([1])
-        mix_coeff = solve_qp(P, q, A, b, Aeq, beq)
+        mix_coeff = solve_qp(P, q, A, b, Aeq, beq, solver="quadprog")
         #resid = np.dot(q_sources, max_coeff) - q_target  # these aren't needed anymore
         #resnorm = np.dot(resid.T, resid)
         if q_val != 0:
@@ -262,7 +262,7 @@ class Admix:
             q = -2*(np.dot(q_sources.T,q_target))
             
             # run linear model
-            mixing[:,rep] = solve_qp(P, q, A, b, Aeq, beq)
+            mixing[:,rep] = solve_qp(P, q, A, b, Aeq, beq, solver="quadprog")
         
             
         
