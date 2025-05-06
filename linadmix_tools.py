@@ -92,7 +92,7 @@ def read_gfile2(g_file):
             fields = line.split()  # split by whitespace
             ids.append(fields[id_ind])
             f = np.array(fields[6:])
-            f = np.where(f=='NA',np.nan,f).astype(np.float)
+            f = np.array(['nan' if x == 'NA' else x for x in fields[6:]], dtype='float64')
             gdata.append(f)
     i = np.array(ids)
     g = np.asarray(gdata)
